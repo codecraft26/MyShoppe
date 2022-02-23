@@ -1,18 +1,16 @@
-package dev.aman.myshoppe
+package dev.aman.myshoppe.login
 
-import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
-import dev.aman.myshoppe.login.LoginActivity
+import dev.aman.myshoppe.R
 
-class SplashActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.activity_login)
         @Suppress("DEPRRECTED")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
@@ -23,16 +21,5 @@ class SplashActivity : AppCompatActivity() {
 
                 )
         }
-
-        Handler().postDelayed({
-            val mIntent = Intent(this@SplashActivity, LoginActivity::class.java)
-            startActivity(mIntent)
-            finish()
-        }, 2000)
     }
-
-
-
-
 }
-
